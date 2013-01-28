@@ -1,0 +1,12 @@
+GIT notes
+=====================================================================================
+
+not drive people crazy
+git config --global core.autocrlf input
+
+- what's going on currently
+git config --list
+
+- just one  var
+git config user.name
+
