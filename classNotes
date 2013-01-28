@@ -10,3 +10,81 @@ git config --list
 - just one  var
 git config user.name
 
+- color setting
+git config --global color.ui auto
+
+- summary
+git status -s
+
+- git takes ALL files in a project, irrespective of the directory struct
+
+- diffs look at diffs from each add: WORK
+git diff <file>
+- what's changed: STAGING
+git diff --staged
+-  uncommit changes: HISTORY
+git diff HEAD
+
+- show all commits in chronological order
+git log
+
+git log --format=full
+git log --oneline
+git log --stat
+- get me changes of last 2 commit
+git log -2 --stat --patch
+
+- config changes do not change CURRENT checkins
+
+- what words changed
+git log --patch --word-diff
+
+git diff --color-words
+git diff --word-diff
+git log --graph
+git log --graph --oneline
+
+moving and removing
+
+git rm <file>
+
+remove from tracking
+git rm --cached <file>
+
+- what files is git following
+git ls-files
+
+- an accidental commit
+- remove: notice space after -- (still in working dir)
+git rm --cached -- <file>
+git commit <file>
+git ls-files
+git status
+
+git mv <file> <newdir_or_name>
+
+git log -2 (only last 2 changes)
+git log --stat -M (only moves)
+git log --stat -M100 
+git log --stat -2 -M100% --stat
+git log --follow (full history, with move info)
+
+- how to ignore files
+create a .gitignore file (with the files to be ignored)
+- don't ignore
+create a .gitignore file with "!" to NOT ignore
+
+- for global ignore patterns, at user level
+create .gitignore files
+git config --global core.excludesfile ~/.gitignore
+
+
+- getting state at a particular point in time
+- copy version (hex num) [detached HEAD]
+git checkout <branch_hex>
+git checkout master
+
+- messed up a move, etc, like a mv <file>
+mv atest sub/atest (now, in a funky state)
+git checkout atest (notice, NO cd)
+git status
